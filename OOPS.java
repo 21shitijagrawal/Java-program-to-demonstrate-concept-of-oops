@@ -1,14 +1,13 @@
 /* See the Description for more infromation. */
 import java.util.Scanner;
 interface Data{
-	void get();
 	void show();
 }
 class Person implements Data{
 	protected String name;
 	protected String address;
 	protected int age;
-	public void get(){
+	public void set(){
 		Scanner s = new Scanner(System.in);
 		System.out.print("\nEnter Name : ");
 		this.name = s.next();
@@ -17,7 +16,16 @@ class Person implements Data{
 		System.out.print("\nEnter Address : ");
 		this.address = s.next();
 	}
-	public void get(String name, int age, String address){ // Method overloading.
+	public String getName(){
+		return this.name;
+	}
+	public String getAddress(){
+		return this.address;
+	}
+	public int getAge(){
+		return this.age;
+	}
+	public void set(String name, int age, String address){ // Method overloading.
 		this.name = name;
 		this.age = age;
 		this.address = address;
@@ -31,15 +39,18 @@ class Person implements Data{
 class Employee extends Person {
 	private int employeeId; 
 	private double salary;
-	public void get(){ // Runtime Polymorphism :  overwriting method of super class.
+	public void set(){ // Runtime Polymorphism :  overwriting method of super class.
 		Scanner s = new Scanner(System.in);
-		super.get();
+		super.set();
 		System.out.print("\nEnter the Employee Id : ");
 		this.employeeId = s.nextInt();
 		System.out.print("\nEnter the Employee Salary : ");
 		this.salary = s.nextDouble();
 	}
-	private double getSalary(){  // Encapsulation
+	public int getEmployeeId(){
+		return this.employeeId;
+	}
+	public double getSalary(){
 		return this.salary;
 	}
 	public void show(){
@@ -50,12 +61,13 @@ class Employee extends Person {
 }
 class OOPS{
 	public static void main(String[] args){
-		Person p = new Person();
-		p.get("Person", 16, "ABCB CDJ");
-		p.show();
 
-		Employee e = new Employee();
-		e.get();
-		e.show();
+		Person p = new Person();
+		p.set("Person", 16, "ABCB CDJ");
+		p.show();
+		
+		Person runTime = new Employee();
+		runTime.set();
+		runTime.show();
 	}
 }
