@@ -14,12 +14,13 @@ The give code cover various Object oriented concepts of java some are as follows
 		there are two types of polymorphism 
 			i)Compile time polymorphism : In it decision is taken by compiler at compile time.
 				one example of compile time polymorphism is method overloading.
-				In given code the 'get' method is overloaded it has two form which are as follow : 
-					1) void get()
-					2) void get(String name, int  age, String address)
+				In given code the 'set' method is overloaded it has two form which are as follow : 
+					1) void set()
+					2) void set(String name, int  age, String address)
 			ii)Runtime polymorphism : In it decision is taken by compiler at run time.
 				one example of runtime polymorphism is method overwriting.
-				In given code the 'get' and 'show' methods are overwritten by the methods of class Employee.
+				In given code the 'set' and 'show' methods are overwritten by the methods of class Employee,
+				also superclass variable 'runTime' can contain an instance of a subclass.
 	4.Abstraction : It means to hide unnecessary details of program from user.
 	
 Advantages of OOPS : 
